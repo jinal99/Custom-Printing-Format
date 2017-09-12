@@ -20,16 +20,14 @@ import javax.print.attribute.standard.PageRanges;
     private static String text;
   
     public static void main(String[] args) {
-        
         RawPrinting lt = new RawPrinting();
-        System.out.println("here1\u001B\u006A\u00D8here2");
-        lt.printString("here1\u001B\u006A\u00D8here2");
-        
+        lt.printString("\u008D"+"\u008D"+"\u008D"+"\u008D"  );
+       // lt.printString("\u001B" + "\u006A" + (char)216+"\u001B" + "\u006A" + (char)216+"\u001B" + "\u006A" + (char)216+"\u001B" + "\u006A" + (char)216+"\u001B" + "\u006A" + (char)216);
     }
  
     public void printString(String input) {
  
-        text = input;
+        this.text = input;
         printService = findPrintService("EPSON LQ-50 ESC/P2");
         PrintRequestAttributeSet aset = new HashPrintRequestAttributeSet();
         aset.add(new PageRanges(1, 1));
